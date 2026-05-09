@@ -1,0 +1,28 @@
+import SwiftUI
+
+/// Square SF-symbol button with a hover-state background tint. Used for the
+/// add (+) and close (×) controls in the sidebar and tab bar — keeps the
+/// hover affordance consistent and the call sites tiny.
+struct HoverableIconButton: View {
+    let systemName: String
+    let fontSize: CGFloat
+    let size: CGFloat
+    let help: String?
+    let action: () -> Void
+
+    @State private var isHovered = false
+
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: systemName)
+                .font(.system(size: fontSize, weight: .medium))
+                .frame(width: size, height: size)
+                .background(isHovered ? Color.white.opacity(0.12) : .clear)
+                .clipShape(RoundedRectangle(cornerRadius: 5))
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .onHover { isHovered = $0 }
+        .help(help ?? "")
+    }
+}
