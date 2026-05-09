@@ -4,7 +4,7 @@ import Foundation
 /// Help menu, and window title. Bump `displayVersion` on every release so the
 /// About panel matches the latest CHANGELOG `vX.Y` tag.
 enum PebbleApp {
-    static let name = "pebble"
+    static let name = "Pebble"
     static let displayVersion = "0.1.0"
     static let tagline = "A terminal built for the coding experience."
     static let author = "Corey Chiu"

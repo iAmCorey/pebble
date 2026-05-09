@@ -36,7 +36,7 @@ struct SidebarView: View {
             .padding(.bottom, Theme.space2)
         } else {
             HStack(spacing: 0) {
-                Text("pebble")
+                Text("Pebble")
                     .font(Theme.display(15, weight: .medium))
                     .foregroundStyle(Theme.chromeForeground)
                 Spacer()
